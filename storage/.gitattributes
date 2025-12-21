@@ -1,0 +1,56 @@
+# Thiết lập chung
+* text=auto eol=lf
+
+# Thiết lập các file cấu hình hệ thống và Docker
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+.env* text eol=lf
+*.sh text eol=lf
+
+# Đánh dấu các file text
+*.ts text
+*.tsx text
+*.js text
+*.jsx text
+*.json text
+*.md text
+*.html text
+*.css text
+*.scss text
+*.yml text
+*.yaml text
+*.prisma text
+*.sql text
+.eslintrc* text
+.prettierrc* text
+package.json text
+tsconfig.json text
+
+# Đánh dấu các file nhị phân
+## Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+
+## Fonts
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+## Documents và Database
+*.pdf binary
+*.db binary
+*.sqlite binary
+*.crt binary
+*.key binary
+
+# Tối ưu hiển thị GitHub/GitLab
+dist/** linguist-vendored
+node_modules/** linguist-vendored
+package-lock.json linguist-generated
+yarn.lock linguist-generated
+pnpm-lock.yaml linguist-generated

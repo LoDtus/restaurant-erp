@@ -29,7 +29,20 @@ export default tseslint.config(
             '@typescript-eslint/no-explicit-any': 'off',
             '@typescript-eslint/no-floating-promises': 'warn',
             '@typescript-eslint/no-unsafe-argument': 'warn',
-            "prettier/prettier": ["error", { endOfLine: "auto" }],
+            // "prettier/prettier": "off",
+            "prettier/prettier": [
+                "warn",
+                {},
+                {
+                    "pluginConfig": {
+                        "overrideRules": {
+                            "indent": { "severity": "off" }, // tắt lỗi tab/space
+                            "space-before-function-paren": { "severity": "off" },
+                            "arrow-parens": { "severity": "off" },
+                        }
+                    }
+                }
+            ]
         },
     },
 );

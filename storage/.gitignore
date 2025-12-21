@@ -1,0 +1,22 @@
+# Chặn toàn bộ file trong folder, ngoại trừ một số file khác
+*
+**/*.txt
+!.gitignore
+!.gitattributes
+!README.md
+
+# Không chặn các folder con sau
+!examples/
+!examples/**
+!default/
+!default/**
+
+# Chặn các local tool trong quá trình phát triển
+*.py
+.venv/
+venv/
+__pycache__/
+requirements.txt
+*.py[cod]
+
+# Cho phép các file quản lý và tài liệu hướng dẫn
