@@ -1,0 +1,63 @@
+# Build & Output
+dist/
+build/
+node_modules/
+/out
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS Specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tests & Coverage
+/coverage
+/.nyc_output
+*.lcov
+
+# IDEs & Editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+**/*.txt
+
+# Runtime & Temp
+pids
+*.pid
+*.seed
+*.pid.lock
+.temp/
+.tmp/
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Docker
+.docker/

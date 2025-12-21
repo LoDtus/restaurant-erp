@@ -1,0 +1,7 @@
+mongodb.js
+**.txt
+.env
+.env.*
+*.log
+npm-debug.log*
+node_modules/
