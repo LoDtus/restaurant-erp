@@ -1,3 +1,5 @@
+/*          --- .env ---         */
+
 // Application
 export const APPLICATION_NAME = process.env.APPLICATION_NAME;
 export const DESCRIPTION = process.env.DESCRIPTION;
@@ -24,3 +26,7 @@ export const RESET_PASSWORD_TOKEN_EXPIRATION = process.env.RESET_PASSWORD_TOKEN_
 export const EMAIL_AUTHOR = process.env.EMAIL_AUTHOR;
 export const EMAIL_USERNAME = process.env.EMAIL_USERNAME;
 export const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+
+/*          --- Others ---         */
+export const BAD_NUMBERS = ["13", "44", "49", "53", "77", "78", "111"];
+export const DEFAULT_PREFIX_EMP_CODE = "LVI";

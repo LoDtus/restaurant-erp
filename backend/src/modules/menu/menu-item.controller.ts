@@ -10,8 +10,8 @@ import {
 	Query,
 } from '@nestjs/common';
 import { MenuItemService } from './menu-item.service';
-import { NewItemDto } from 'src/dtos/menu-iten/new-item.dto';
 import { ApiResponseDto } from 'src/dtos/api-response.dto';
+import { NewItemDto } from 'src/dtos/menu-item/new-item.dto';
 
 @Controller('menu')
 export class MenuController {
