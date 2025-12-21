@@ -20,7 +20,8 @@
         ],
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "noImplicitAny": false,
     },
     "include": [
         "next-env.d.ts",
@@ -31,4 +32,4 @@
         "**/*.mts"
     ],
     "exclude": ["node_modules"]
-};
+}
