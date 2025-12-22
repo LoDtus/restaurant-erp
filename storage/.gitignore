@@ -10,9 +10,11 @@
 !examples/**
 !default/
 !default/**
+!timekeeping-files/
+!timekeeping-files/**
 
 # Chặn các local tool trong quá trình phát triển
-*.py
+**/*.py
 .venv/
 venv/
 __pycache__/

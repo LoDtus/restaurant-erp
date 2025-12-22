@@ -1,7 +1,7 @@
 export default function ContentSide() {
     return (
-        <div>
-
+        <div className="p-2">
+            
         </div>
     );
 };
