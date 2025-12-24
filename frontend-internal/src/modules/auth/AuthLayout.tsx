@@ -16,13 +16,19 @@ export default function AuthLayout() {
                         <SwiperSlide>
                             <img
                                 className='w-full h-full object-cover'
-                                src="/images/AccessBg-no1.jpg"
+                                src="/images/bg-example-1.jpg"
                             />
                         </SwiperSlide>
                         <SwiperSlide>
                             <img
                                 className='w-full h-full object-cover'
-                                src="/images/AccessBg-no2.jpg"
+                                src="/images/bg-example-2.jpg"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <img
+                                className='w-full h-full object-cover'
+                                src="/images/bg-example-3.jpg"
                             />
                         </SwiperSlide>
                     </Swiper>

@@ -10,7 +10,14 @@ import ProfileLayout from './modules/profile/ProfileLayout';
 import ConfigLayout from './modules/config/ConfigLayout';
 import RoleConfig from './modules/config/RoleConfig';
 import SettingLayout from './modules/setting/SettingLayout';
-import EmployeeLayout from './modules/hrm/employee/EmployeeLayout';
+import EmployeeLayout from './modules/hrm/employees/EmployeeLayout';
+import ShiftLayout from './modules/hrm/shifts/ShiftLayout';
+import PayrollLayout from './modules/hrm/payrolls/PayrollLayout';
+import MaterialLayout from './modules/resources/materials/MaterialLayout';
+import DocumentLayout from './modules/resources/documents/DocumentLayout';
+import AssetLayout from './modules/resources/assets/AssetLayout';
+import PositionConfig from './modules/config/PositionConfig';
+import DepartmentConfig from './modules/config/DepartmentConfig';
 
 export default function App() {
     return (
@@ -26,23 +33,31 @@ export default function App() {
                 <Route path="/" element={<RootLayout/>}>
                     <Route index element={<DashboardLayout/>}/>
                     <Route path="dashboard" element={<DashboardLayout/>}/>
-                    <Route path="employee" element={<EmployeeLayout/>}/>
+                    <Route path="/hrm">
+                        {/* <Route index element={<SignIn/>}/> */}
+                        <Route path="employees" element={<EmployeeLayout/>}/>
+                        <Route path="shifts" element={<ShiftLayout/>}/>
+                        <Route path="payrolls" element={<PayrollLayout/>}/>
+                    </Route>
+                    <Route path="/resources">
+                        <Route path="materials" element={<MaterialLayout/>}/>
+                        <Route path="documents" element={<DocumentLayout/>}/>
+                        <Route path="assets" element={<AssetLayout/>}/>
+                    </Route>
                     <Route path="setting" element={<SettingLayout/>}/>
                     <Route path="profile" element={<ProfileLayout/>}/>
                     <Route path="config" element={<ConfigLayout/>}/>
+                    <Route path="/configs">
+                        <Route path="roles" element={<RoleConfig/>}/>
+                        <Route path="positions" element={<PositionConfig/>}/>
+                        <Route path="departments" element={<DepartmentConfig/>}/>
+                    </Route>
                     {/* <Route path="config/position" element={<PositionConfig/>}/> */}
                     <Route path="config/role" element={<RoleConfig/>}/>
                     {/* <Route path="schedule" element={<ScheduleLayout/>}/> */}
                     {/* <Route path="attendance" element={<AttendanceLayout/>}/> */}
-                    {/* <Route path="contract" element={<ContractLayout/>}/> */}
                 </Route>
             </Routes>
-
-            {/* <Header/>
-            <div className='w-full h-full flex'>
-                <NavigationBar/>
-                <ContentSide/>
-            </div> */}
         </div>
     )
 };
