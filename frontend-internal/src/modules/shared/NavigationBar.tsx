@@ -38,16 +38,29 @@ export default function NavigationBar() {
                                 ${isActive ? 'text-white bg-blue' : 'duration-200 hover:text-black hover:bg-gray-200 active:scale-95'}
                             `}
                             onClick={() => {
-                                if (tab.subMenu) {
-                                    // Nếu có subMenu và chưa active (chưa mở), chuyển đến sub đầu tiên
-                                    if (!isActive) {
-                                        const firstSubPath = getFullPath(tab.path, tab.subMenu[0].path);
-                                        navigateTo(firstSubPath);
-                                    }
-                                    // Nếu đã active rồi thì không làm gì (hoặc có thể toggle collapse nếu muốn, nhưng hiện tại bạn đang dùng isActive để mở)
+                                if (!tab.subMenu || tab.subMenu.length === 0) {
+                                    navigate(tab.path);
+                                    return;
+                                }
+
+                                // Tab CÓ submenu
+                                const currentPath = location.pathname;
+
+                                // Kiểm tra xem đang ở chính xác path của tab cha chưa
+                                const isAtParentPath = currentPath === tab.path || currentPath === tab.path + '/';
+
+                                if (isAtParentPath) {
+                                    // Đã ở parent → chỉ cần mở menu ra (không navigate)
+                                    // hoặc bạn có thể navigate lại chính nó để trigger re-render nếu cần
+                                    // navigate(tab.path); // optional
                                 } else {
-                                    // Tab không có subMenu → đi thẳng đến path của nó
-                                    navigateTo(tab.path);
+                                    // Chưa ở parent → cần quyết định đi đâu
+
+                                    // Cách 1: Luôn đi vào index nếu có (nhiều người thích cách này)
+                                    navigate(tab.path);
+
+                                    // Cách 2: Chỉ đi index nếu route cha có index, còn không thì đi con đầu tiên
+                                    // (cách này cần biết cấu trúc router → hơi khó tự động, thường dùng cách dưới)
                                 }
                             }}
                         >

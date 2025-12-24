@@ -18,6 +18,11 @@ import DocumentLayout from './modules/resources/documents/DocumentLayout';
 import AssetLayout from './modules/resources/assets/AssetLayout';
 import PositionConfig from './modules/config/PositionConfig';
 import DepartmentConfig from './modules/config/DepartmentConfig';
+import HrmLayout from './modules/hrm/HrmLayout';
+import ResourceLayout from './modules/resources/ResourceLayout';
+import ScheduleLayout from './modules/hrm/shifts/ScheduleLayout';
+import AttendanceLayout from './modules/hrm/shifts/AttendanceLayout';
+import NoAccessLayout from './modules/shared/NoAccessLayout';
 
 export default function App() {
     return (
@@ -34,12 +39,13 @@ export default function App() {
                     <Route index element={<DashboardLayout/>}/>
                     <Route path="dashboard" element={<DashboardLayout/>}/>
                     <Route path="/hrm">
-                        {/* <Route index element={<SignIn/>}/> */}
+                        <Route index element={<HrmLayout/>}/>
                         <Route path="employees" element={<EmployeeLayout/>}/>
                         <Route path="shifts" element={<ShiftLayout/>}/>
                         <Route path="payrolls" element={<PayrollLayout/>}/>
                     </Route>
                     <Route path="/resources">
+                        <Route index element={<ResourceLayout/>}/>
                         <Route path="materials" element={<MaterialLayout/>}/>
                         <Route path="documents" element={<DocumentLayout/>}/>
                         <Route path="assets" element={<AssetLayout/>}/>
@@ -52,12 +58,14 @@ export default function App() {
                         <Route path="positions" element={<PositionConfig/>}/>
                         <Route path="departments" element={<DepartmentConfig/>}/>
                     </Route>
-                    {/* <Route path="config/position" element={<PositionConfig/>}/> */}
+                    <Route path="config/position" element={<PositionConfig/>}/>
                     <Route path="config/role" element={<RoleConfig/>}/>
-                    {/* <Route path="schedule" element={<ScheduleLayout/>}/> */}
-                    {/* <Route path="attendance" element={<AttendanceLayout/>}/> */}
+                    <Route path="schedule" element={<ScheduleLayout/>}/>
+                    <Route path="attendance" element={<AttendanceLayout/>}/>
                 </Route>
             </Routes>
+
+            <NoAccessLayout/>
         </div>
     )
 };

@@ -27,7 +27,7 @@ export default function SignIn() {
     }, [form])
 
     return (
-        <div className="p-12">
+        <div className="p-12 border">
             <h1 className="mb-3 font-semibold text-2xl text-center">Đăng nhập</h1>
 
             <label htmlFor="signin-username" className="shrink-0"><Text>Email của bạn</Text></label>
