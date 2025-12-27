@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Checkbox, Input, Typography } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
-import { notify } from "../../utils/notificationUtils";
+import { notify } from "@/utils/notificationUtils";
 
 const { Text, Link } = Typography;
 

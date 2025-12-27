@@ -1,4 +1,5 @@
 import { BAD_NUMBERS, DEFAULT_PREFIX_EMP_CODE } from "src/common/constants/constants";
+import slugify from '@sindresorhus/slugify';
 
 export const genEmployeeCode = (prefix: string = DEFAULT_PREFIX_EMP_CODE, count: number): { count: number; number: string } => {
     const MAX_VAL = 9999;
@@ -46,4 +47,26 @@ export const genEmployeeCode = (prefix: string = DEFAULT_PREFIX_EMP_CODE, count:
             number: `${prefix}_${numStr}`,
         };
     }
+};
+
+export const genSlug = (text: string): string => {
+    return slugify(text, {
+        separator: '-',
+        lowercase: true,
+        decamelize: true, // Tự động tách các từ viết nếu nó được viết theo dạng camelCase như 'fooBar' → 'foo-bar'
+        customReplacements: [
+            ['&', ''],
+            ['🇻🇳', 'viet-nam'],
+            ['VN', 'viet-nam'],
+            ['cua', ''],
+            ['va', ''],
+            ['la', ''],
+            ['nhung', ''],
+            ['cac', ''],
+            ['a', ''],
+        ],
+        preserveLeadingUnderscore: false, // Không giữ lại dấu gạch chân '_' ở đầu chuỗi nếu có
+        preserveTrailingDash: false, // Không giữ lại dấu gạch ngang '-' ở cuối chuỗi nếu có
+        transliterate: true, // Chuyển sang các ký tự latin
+    });
 };

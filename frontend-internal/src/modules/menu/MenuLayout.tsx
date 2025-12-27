@@ -1,4 +1,4 @@
-export function MenuLayout() {
+export default function MenuLayout() {
     return (
         <div>
             menu

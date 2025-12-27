@@ -7,7 +7,7 @@ import {
     faAnglesLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { NAVIGATION_TABS } from "../../configs/constants";
+import { NAVIGATION_TABS } from "@/configs/constants";
 
 export default function NavigationBar() {
     const profile = "";

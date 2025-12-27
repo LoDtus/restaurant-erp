@@ -1,7 +1,7 @@
 // import { notification } from 'antd';
 // import { useTranslation } from 'react-i18next';
 // import { useEffect } from 'react';
-// import { setNotificationApi, setTranslationFn } from '../utils/notificationUtils';
+// import { setNotificationApi, setTranslationFn } from '../utils/notificationUtils'; // alias
 
 // export const GlobalNotificationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 //     const { t } = useTranslation();
